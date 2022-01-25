@@ -1,0 +1,10 @@
+import java.lang.Number;
+import mypace.rules_engine_poc.Patient;
+
+rule "patient-health-reco-7"
+	dialect "mvel"
+	when
+		>p : Patient( lifestyleDisease == "Diabetes" && weight > 150 )
+	then
+		>p.setLifestyleDisease( "default" );
+end

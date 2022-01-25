@@ -1,0 +1,10 @@
+import java.lang.Number;
+import mypace.rules_engine_poc.Patient;
+
+rule "CarePlanEntry-MultiComorbid"
+	dialect "mvel"
+	when
+		>p : Patient( lifestyleDisease matches "cancer" && weight > 200 )
+	then
+		>p.setRecommendedPlan( "http://health-plan.com/MultiComorbid" );
+end

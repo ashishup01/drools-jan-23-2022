@@ -1,0 +1,13 @@
+package myspace.rules_engine_poc;
+
+import java.lang.Number;
+
+rule "ashish-rule-copy-test"
+	dialect "mvel"
+	when
+		>p : PatientCopyTest( lifestyleDisease matches "diabetes" )
+	then
+		>modify( p ) {
+				>setRecommendedPlan( "http://health-plan/diabetes" )
+		>}
+end

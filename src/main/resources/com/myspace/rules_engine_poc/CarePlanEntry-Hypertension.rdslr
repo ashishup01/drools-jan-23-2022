@@ -1,0 +1,12 @@
+package com.myspace.rules_engine_poc;
+
+import java.lang.Number;
+import mypace.rules_engine_poc.Patient;
+
+rule "CarePlanEntry-Hypertension"
+	dialect "mvel"
+	when
+		>p : Patient( lifestyleDisease == "Hypertension" )
+	then
+		>p.setRecommendedPlan( "hypertension" );
+end
