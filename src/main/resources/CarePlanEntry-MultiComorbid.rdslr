@@ -1,5 +1,5 @@
 import java.lang.Number;
-import mypace.rules_engine_poc.Patient;
+import myspace.rules_engine_poc.Patient;
 
 rule "CarePlanEntry-MultiComorbid"
 	dialect "mvel"
